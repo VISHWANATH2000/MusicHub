@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Music Application</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Customer Options Section -->
+    <div class="container mx-auto py-10">
+        <div class="divider mb-10"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 customer-options text-center">
+            <!-- View Songs -->
+            <div class="card-option shadow-lg p-8 bg-white rounded-lg transform transition duration-500 hover:scale-105">
+                <i class="fas fa-music fa-4x text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-4">View Songs</h3>
+                <a href="/exploreSongs"><button class="btn btn-primary gradient-button px-6 py-3 rounded-full">View Songs</button></a>
+            </div>
+            <!-- View Playlists -->
+            <div class="card-option shadow-lg p-8 bg-white rounded-lg transform transition duration-500 hover:scale-105">
+                <i class="fas fa-list fa-4x text-green-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-4">View Playlists</h3>
+                <a href="/view-playlists-customer"><button class="btn btn-success gradient-button px-6 py-3 rounded-full">View Playlists</button></a>
+            </div>
+             <!-- Create Favorite Playlists -->
+            <div class="card-option shadow-lg p-8 bg-white rounded-lg transform transition duration-500 hover:scale-105">
+                <i class="fas fa-list fa-4x text-green-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-4">Create Favorite Playlists</h3>
+                <a href="/createfavoriteplaylist"><button class="btn btn-success gradient-button px-6 py-3 rounded-full"> Create Favorite Playlists</button></a>
+            </div>
+            <!-- View Favorite Playlists -->
+            <div class="card-option shadow-lg p-8 bg-white rounded-lg transform transition duration-500 hover:scale-105">
+                <i class="fas fa-list fa-4x text-green-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-4">View Favorie Playlists</h3>
+                <a href="/viewfavoriteplaylist"><button class="btn btn-success gradient-button px-6 py-3 rounded-full">ViewFavoritePlaylists</button></a>
+            </div>
+
+    <!-- Bootstrap and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

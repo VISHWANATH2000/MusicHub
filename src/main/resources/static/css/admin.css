@@ -1,0 +1,72 @@
+/* Custom Styles */
+.animated-heading {
+    animation: fadeIn 2s ease-in-out;
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.divider {
+    height: 2px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+/* Card Styles */
+.card-option {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Button Overrides */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* New customizations */
+header {
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+}
+
+.bg-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+/* Additional styling for responsiveness */
+@media (min-width: 768px) {
+    .card-option {
+        padding: 30px;
+    }
+}

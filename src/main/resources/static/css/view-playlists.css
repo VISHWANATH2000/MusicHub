@@ -1,0 +1,41 @@
+/* Main body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+/* Playlist card hover effect */
+.playlist-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom styling for audio player */
+.audio-player {
+    background-color: #1F2937;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+/* Custom transition for buttons */
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Save button hover */
+button[type="submit"]:hover {
+    background-color: #48bb78;
+}
+
+/* Input field styling */
+#edit-title {
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Form focus styling */
+input:focus {
+    outline: none;
+    ring: 2px solid #D69E2E;
+}

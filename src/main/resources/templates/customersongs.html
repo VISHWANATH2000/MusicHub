@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Songs - Customer</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link to external custom CSS -->
+    <link rel="stylesheet" href="css/displaysongs.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Container -->
+    <div class="container mx-auto py-12 px-4">
+        <h1 class="text-3xl font-bold mb-6 text-center text-indigo-700">Song List</h1>
+        
+        <!-- Filter and Search Bar -->
+        <div class="flex justify-between mb-4">
+            <input type="text" placeholder="Search Songs..." 
+                class="search-bar shadow appearance-none border rounded w-full max-w-xs py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500">
+
+            <div class="pagination">
+                <button class="btn-pagination">Prev</button>
+                <button class="btn-pagination">Next</button>
+            </div>
+        </div>
+
+        <!-- Songs Table -->
+        <table class="table-auto w-full bg-white shadow-lg rounded-lg">
+            <thead>
+                <tr class="bg-indigo-600 text-white">
+                    <th class="px-4 py-2">Song Name</th>
+                    <th class="px-4 py-2">Artist</th>
+                    <th class="px-4 py-2">Audio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="song : ${songs}" class="hover:bg-gray-200">
+                    <td class="border px-4 py-2" th:text="${song.title}"></td>
+                    <td class="border px-4 py-2" th:text="${song.artist}"></td>
+                    <td class="border px-4 py-2">
+                        <audio controls>
+                            <source th:src="${song.url}" type="audio/mpeg"></source>
+                        </audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

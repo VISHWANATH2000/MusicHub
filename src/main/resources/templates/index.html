@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Hub - Home</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link to external custom CSS -->
+    <link rel="stylesheet" href="/css/index.css">
+
+    <!-- Icon for MusicHub -->
+    <link rel="icon" href="css/logo-icon.png"> <!-- Ensure this is the path to your logo -->
+    
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- MusicHub with icon logo -->
+                <img src="css/music-player.png" alt="MusicHub Icon" class="h-8 w-8 mr-2"> <!-- Path to logo icon -->
+                <a class="text-white text-2xl font-bold" href="#">MusicHub</a>
+            </div>
+            <div class="space-x-6">
+                <a href="index" class="text-gray-300 hover:text-white transition">Home</a>
+                <a href="contact" class="text-gray-300 hover:text-white transition">Contact</a> <!-- Link to contact form -->
+                <a href="login" class="text-gray-300 hover:text-white transition">Login</a>
+                <a href="signup" class="text-gray-300 hover:text-white transition">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-cover bg-center h-screen text-white flex items-center justify-center" style="background-image: url('css/music-hero.jpg');">
+        <div class="text-center space-y-6">
+            <h1 class="text-6xl font-bold leading-tight hero-heading">Creative Studio Focused on Music</h1>
+            <a href="payment" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-8 rounded-full transition hero-button">Start Your Journey</a>
+        </div>
+    </header>
+
+    <!-- How We're Different Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto text-center space-y-12">
+            <h2 class="text-4xl font-bold">How We're Different</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition feature-card">
+                    <h3 class="text-xl font-semibold mb-4">Customizable Experiences</h3>
+                    <p>Our platform allows artists to fully customize their profiles, giving them the freedom to express their unique style.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition feature-card">
+                    <h3 class="text-xl font-semibold mb-4">Advanced Analytics</h3>
+                    <p>Get deep insights into your audience with our advanced analytics tools, helping you make data-driven decisions.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition feature-card">
+                    <h3 class="text-xl font-semibold mb-4">Seamless Integration</h3>
+                    <p>Our platform seamlessly integrates with social media, allowing you to share your music with the world effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto text-center space-y-12">
+            <h2 class="text-4xl font-bold">Features</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <div class="p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition feature-card">
+                    <h3 class="text-xl font-semibold mb-4">24/7 Support</h3>
+                    <p>We’re always here to help.</p>
+                </div>
+                <div class="p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition feature-card">
+                    <h3 class="text-xl font-semibold mb-4">Award Winning Agency</h3>
+                    <p>You are in safe hands.</p>
+                </div>
+                <div class="p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition feature-card">
+                    <h3 class="text-xl font-semibold mb-4">100+ Companies Trust Us</h3>
+                    <p>Join the community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-gray-300 py-8">
+    <div class="container mx-auto flex justify-between items-start">
+        <div class="left-section w-1/3">
+            <h5 class="text-lg font-bold text-white mb-4">Contact Us</h5>
+            <p>Email: <a href="mailto:vishwanathareddy598@gmail.com" class="text-indigo-400">vishwanathareddy598@gmail.com</a></p>
+            <p>Phone: <a href="tel:+917892279940" class="text-indigo-400">+91 7892279940</a></p>
+            <p>Address: 07, Music St., Sound City</p>
+        </div>
+
+        <div class="middle-section w-1/3">
+            <h5 class="text-lg font-bold text-white mb-4">Useful Links</h5>
+            <ul class="space-y-2">
+                <li><a href="index" class="hover:text-indigo-400 transition">Home</a></li>
+                <li><a href="payment" class="hover:text-indigo-400 transition">Premium</a></li>
+                <li><a href="contact" class="hover:text-indigo-400 transition">Contact</a></li>
+                <li><a href="login" class="hover:text-indigo-400 transition">Login</a></li>
+                <li><a href="signup" class="hover:text-indigo-400 transition">Sign Up</a></li>
+            </ul>
+        </div>
+
+        <div class="right-section w-1/3">
+            <!-- Google Map Embed (Bangalore Location) -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0242243624777!2d77.59456251521657!3d12.971598590858714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670b69b6c05%3A0x73d9160392fa9c4!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1696331465041!5m2!1sen!2sus" 
+                width="100%" 
+                height="250" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Copyright section below the map -->
+    <div class="text-center pt-4">
+        <p class="text-sm text-gray-400">&copy; 2024 MusicHub. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+</body>
+
+</html>

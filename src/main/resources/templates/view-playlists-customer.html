@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Playlists</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/view-playlists.css">
+</head>
+<body class=" bg-cover text-white" style="background-image: url('/css/music-hero.jpg');">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-extrabold text-center text-pink-500 mb-10 ">Playlists</h1>
+        
+        <div class="flex flex-wrap justify-between">
+            <div th:each="playlist : ${playList}" class="playlist-card bg-gradient-to-r from-teal-400 via-purple-500 to-pink-600 p-6 m-4 rounded-xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 duration-300 flex-1 min-w-[250px] max-w-[300px]">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-white" th:text="${playlist.name}"></h2>
+                    <span class="text-xs text-gray-200" th:text="'Playlist ID: ' + ${playlist.id}"></span>
+                </div>
+                <div class="space-y-4">
+                    <ul class="space-y-2">
+                        <li th:each="song : ${playlist.songs}" class="flex items-center justify-between bg-gray-700 p-3 rounded-lg hover:bg-gray-600 transition-colors">
+                            <span th:text="${song.title}" class="text-sm font-semibold text-yellow-300"></span>
+                            <audio controls class="audio-player w-24 h-8">
+                                <source th:src="@{${song.url}}" type="audio/mpeg"></source>
+                            </audio>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

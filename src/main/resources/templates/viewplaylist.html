@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Playlists</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="/css/view-playlists.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cover bg-center text-white" style="background-image: url('/css/music-hero.jpg');">
+    <div class="backdrop-blur-sm bg-black bg-opacity-50 min-h-screen">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-5xl font-extrabold text-center text-yellow-300 mb-12 animate-pulse">Music Playlists</h1>
+            
+            <div class="flex flex-wrap justify-between">
+                <div th:each="playlist : ${playList}" class="playlist-card bg-gradient-to-r from-teal-400 via-purple-500 to-pink-600 p-6 m-4 rounded-xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 duration-300 flex-1 min-w-[250px] max-w-[300px]">
+                    <div class="mb-4">
+                        <!-- Playlist Title and Edit -->
+                        <h2 class="text-2xl font-bold text-white inline" id="playlist-title" th:text="${playlist.name}"></h2>
+                        
+                        <!-- Edit button to trigger title change -->
+                        <button class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded-lg ml-2" onclick="enableEditing(this)">Edit</button>
+                        
+                        <!-- Hidden form to edit the title -->
+                        <form th:action="@{/edit/{id}(id=${playlist.id})}" method="post" class="hidden" id="edit-form">
+                            <input type="text" name="name" id="edit-title" class="bg-gray-700 text-white p-2 rounded focus:ring-2 focus:ring-yellow-500" th:value="${playlist.name}">
+                            <button class="bg-green-500 hover:bg-green-600 text-white py-1 px-3 rounded-lg ml-2" type="submit">Save</button>
+                        </form>
+                    </div>
+
+                    <div class="space-y-4">
+                        <ul class="space-y-2">
+                            <li th:each="song : ${playlist.songs}" class="flex items-center justify-between bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition-colors">
+                                <span th:text="${song.title}" class="text-sm font-semibold text-yellow-300"></span>
+                                <audio controls class="audio-player w-28 h-10">
+                                    <source th:src="@{${song.url}}" type="audio/mpeg"></source>
+                                </audio>
+                                <div class="flex space-x-2">
+                                    <!-- Delete Button -->
+                                    <form th:action="@{/removeSong/{playlistId}/{songId}(playlistId=${playlist.id}, songId=${song.id})}" method="post" class="inline">
+                                      <button class="bg-red-500 hover:bg-red-600 text-white py-0.5 px-2 text-sm rounded-md" type="submit">Remove</button>
+
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Delete Playlist Button -->
+                    <div class="mt-4 text-right">
+                        <form th:action="@{/deletePlaylist/{id}(id=${playlist.id})}" 
+                              method="post" class="inline"
+                              onsubmit="return confirm('Are you sure you want to delete this playlist?');">
+                            <button class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-lg" 
+                                    type="submit">Delete Playlist</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript File -->
+    <script  >// JavaScript to handle inline editing for playlist titles
+    function enableEditing(button) {
+        const title = button.previousElementSibling; // Playlist title <h2>
+        const form = button.nextElementSibling; // Hidden form
+
+        // Hide title, show the form
+        title.classList.add('hidden');
+        button.classList.add('hidden');
+        form.classList.remove('hidden');
+
+        // Focus the input field
+        const input = form.querySelector('#edit-title');
+        input.focus();
+    }
+</script>
+</body>
+</html>

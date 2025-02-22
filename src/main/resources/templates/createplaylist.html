@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Playlist</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link to external custom CSS -->
+    <link rel="stylesheet" href="css/creatplaylist.css">
+</head>
+<body class="bg-cover bg-no-repeat bg-center h-screen" style="background-image: url('css/music.jpg');">
+
+    <!-- Form Container -->
+    <div class="flex items-center justify-center h-screen">
+        <form action="/addplaylist" method="post" class="bg-white shadow-md rounded-lg px-8 py-6 fade-in w-full max-w-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Create New Playlist</h2>
+
+            <!-- Playlist Name Field -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Playlist Name:</label>
+                <input type="text" name="name" required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500">
+            </div>
+
+            <!-- Songs Checkboxes Section -->
+            <div class="mb-6">
+                <h3 class="block text-gray-700 text-sm font-bold mb-4">Select Songs:</h3>
+                <div th:each="song : ${songs}" class="flex items-center mb-2">
+                    <input type="checkbox" name="songs" th:value="${song.id}" class="mr-2 focus:ring-indigo-500">
+                    <label th:text="${song.title}" class="text-gray-700"></label>
+                </div>
+            </div>
+
+            <!-- Submit Button with Glow Animation -->
+            <div class="flex items-center justify-center">
+                <input type="submit" value="ADD PLAYLIST" 
+                    class="glow-button bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-500 hover:scale-105 transition-transform duration-300 cursor-pointer">
+            </div>
+        </form>
+    </div>
+
+    <!-- External Scripts if needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

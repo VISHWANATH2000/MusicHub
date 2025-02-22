@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Management</title>
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="/css/song-management.css">
+    <!-- Google Fonts for Typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Song Management</h1>
+
+        <!-- Form to Add a New Song -->
+        <div class="form-section">
+            <h2 class="section-title">Add a Song</h2>
+            <form action="/addSongs" method="post">
+                <div class="form-group">
+                    <label for="title">Song Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="artist">Artist:</label>
+                    <input type="text" id="artist" name="artist" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre:</label>
+                    <input type="text" id="genre" name="genre" required>
+                </div>
+                <div class="form-group">
+                    <label for="url">Song URL:</label>
+                    <input type="url" id="url" name="url" required>
+                </div>
+                <button type="submit" class="submit-btn">Add Song</button>
+            </form>
+        </div>
+
+        <!-- List of Songs -->
+        <div class="list-section">
+            <h2 class="section-title">List of Songs</h2>
+            <ul class="song-list">
+                <li class="song-item" th:each="song : ${songs}" th:text="${song.title} + ' by ' + ${song.artist}"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

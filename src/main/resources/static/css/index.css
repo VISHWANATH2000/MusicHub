@@ -1,0 +1,76 @@
+/* Hero section enhancements */
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Section feature cards hover effect */
+.feature-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styles */
+footer p, footer a {
+    color: #b3b3b3;
+}
+
+footer a:hover {
+    color: #818cf8;
+}
+
+/* Button glow effect */
+a.btn-primary {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+a.btn-primary:hover {
+    box-shadow: 0 5px 15px rgba(67, 56, 202, 0.4);
+    transform: scale(1.05);
+}
+
+/* Hero Section CSS */
+.hero-heading {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    padding: 16px 32px;
+}
+
+/* Footer adjustments for alignment */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: #1f2937;
+    color: #b3b3b3;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer .left-section, footer .right-section {
+    width: 48%;
+}
+
+footer .right-section iframe {
+    width: 100%;
+    height: 250px;
+}
