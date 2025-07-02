@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: musicapp_db
+      MYSQL_ROOT_PASSWORD: Vishwanath@07
+    ports:
+      - "3306:3306"
+    networks:
+      - music-network
+
+  app:
+    build: .
+    container_name: music-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/musicapp_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Vishwanath@07
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - music-network
+
+networks:
+  music-network:
+    driver: bridge 
