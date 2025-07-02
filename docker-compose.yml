@@ -12,5 +12,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data # Persistent storage for your local data
 
+  app:
+    build: .
+    container_name: music-application
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/music_app_db
+      SPRING_DATASOURCE_USERNAME: music_user
+      SPRING_DATASOURCE_PASSWORD: mysecretpassword
+
 volumes:
   postgres_data:
