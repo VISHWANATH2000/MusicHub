@@ -1,30 +1,16 @@
 version: '3.8'
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
+  db:
+    image: postgres:16 # Use a version that matches your Render database if possible
+    container_name: my-music-app-postgres
     environment:
-      MYSQL_DATABASE: musicapp_db
-      MYSQL_ROOT_PASSWORD: Vishwanath@07
+      POSTGRES_DB: music_app_db # Must match the 'Database' name you chose on Render
+      POSTGRES_USER: music_user # Must match the 'User' name you chose on Render
+      POSTGRES_PASSWORD: mysecretpassword # Choose a strong password for local dev
     ports:
-      - "3306:3306"
-    networks:
-      - music-network
+      - "5432:5432" # Map container port 5432 to host port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persistent storage for your local data
 
-  app:
-    build: .
-    container_name: music-app
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/musicapp_db
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: Vishwanath@07
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysql
-    networks:
-      - music-network
-
-networks:
-  music-network:
-    driver: bridge 
+volumes:
+  postgres_data:

@@ -20,7 +20,7 @@ public class Users {
     private String email;
 
     @NotNull(message = "Password is required!")
-    @Size(min = 1, max = 8, message = "Password must be between 1 and 8 characters!")
+    @Size(min = 1, max = 255, message = "Password must be between 1 and 255 characters!")
     private String password;
 
     @NotNull(message = "Gender is required!")

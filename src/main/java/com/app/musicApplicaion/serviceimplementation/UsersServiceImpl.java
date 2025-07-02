@@ -23,6 +23,9 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public boolean validateUser(String email, String password) {
     	Users user = userRepository.findByEmail(email);
+        if (user == null) {
+            return false;
+        }
 		String db_password = user.getPassword();
 		if(db_password.equals(password))
 		{
