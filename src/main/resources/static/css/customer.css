@@ -120,14 +120,23 @@ body {
 }
 
 /* Responsive Design for Cards */
+@media (max-width: 900px) {
+    .card-option { padding: 10px; }
+    .animated-heading { font-size: 2.2rem; }
+}
 @media (max-width: 768px) {
-    .hero-section {
-        height: 60vh;
-    }
-    .animated-heading {
-        font-size: 3rem;
-    }
-    .subheading {
-        font-size: 1.25rem;
-    }
+    .hero-section { height: 40vh; }
+    .animated-heading { font-size: 1.5rem; }
+    .subheading { font-size: 1rem; }
+    .card-option { font-size: 0.95rem; }
+}
+@media (max-width: 600px) {
+    .animated-heading { font-size: 1.1rem; }
+    .subheading { font-size: 0.9rem; }
+    .card-option { font-size: 0.9rem; }
+}
+@media (max-width: 480px) {
+    .animated-heading { font-size: 1rem; }
+    .subheading { font-size: 0.8rem; }
+    .card-option { font-size: 0.85rem; }
 }

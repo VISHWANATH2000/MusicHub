@@ -70,3 +70,22 @@ header {
         padding: 30px;
     }
 }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .animated-heading { font-size: 2.2rem; }
+    .card-option { padding: 15px; }
+}
+@media (max-width: 768px) {
+    .animated-heading { font-size: 1.5rem; }
+    .card-option { padding: 10px; }
+    header { padding: 10px; }
+}
+@media (max-width: 600px) {
+    .animated-heading { font-size: 1.1rem; }
+    .card-option { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+    .animated-heading { font-size: 1rem; }
+    .card-option { font-size: 0.85rem; }
+}

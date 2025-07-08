@@ -150,21 +150,20 @@ input[type="url"]:focus {
 }
 
 /* Responsive Design */
+@media (max-width: 900px) {
+    .container { padding: 20px; }
+    .title { font-size: 2rem; }
+    .section-title { font-size: 1.3rem; }
+}
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    input[type="text"],
-    input[type="url"] {
-        padding: 8px;
-    }
+    .container { padding: 10px; }
+    .title { font-size: 1.2rem; }
+    .section-title { font-size: 1rem; }
+}
+@media (max-width: 600px) {
+    .container { padding: 5px; }
+    .title { font-size: 1rem; }
+}
+@media (max-width: 480px) {
+    .submit-btn, .song-item { font-size: 0.95rem; padding: 8px; }
 }

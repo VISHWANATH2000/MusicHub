@@ -44,3 +44,19 @@ body {
 .auth-form button:hover {
     background-color: #0056b3;
 }
+
+@media (max-width: 900px) {
+    .auth-form { padding: 20px; }
+    h2 { font-size: 1.3rem; }
+}
+@media (max-width: 768px) {
+    .auth-form { padding: 10px; }
+    h2 { font-size: 1.1rem; }
+}
+@media (max-width: 600px) {
+    .auth-form { padding: 5px; }
+    h2 { font-size: 1rem; }
+}
+@media (max-width: 480px) {
+    .auth-form button, .auth-form input { font-size: 0.95rem; padding: 8px; }
+}

@@ -39,3 +39,17 @@ input:focus {
     outline: none;
     ring: 2px solid #D69E2E;
 }
+
+@media (max-width: 900px) {
+    .playlist-card { font-size: 1.1rem; }
+}
+@media (max-width: 768px) {
+    .playlist-card { font-size: 1rem; }
+    .audio-player { padding: 2px; }
+}
+@media (max-width: 600px) {
+    .playlist-card { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+    button, input { font-size: 0.9rem; padding: 8px; }
+}

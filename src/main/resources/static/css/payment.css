@@ -84,3 +84,20 @@ body {
     outline: none;
 }
 
+@media (max-width: 900px) {
+    .payment-container { max-width: 95%; padding: 20px; }
+    .premium-title { font-size: 1.8rem; }
+}
+@media (max-width: 768px) {
+    .payment-container { padding: 10px; }
+    .premium-title { font-size: 1.3rem; }
+    .premium-description, .premium-benefits ul li { font-size: 1rem; }
+}
+@media (max-width: 600px) {
+    .payment-container { padding: 5px; }
+    .premium-title { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+    .buy-button { font-size: 0.9rem; padding: 8px 12px; }
+}
+

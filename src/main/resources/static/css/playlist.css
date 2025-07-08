@@ -61,3 +61,20 @@ li {
     border: 1px solid #ddd;
     margin-bottom: 5px;
 }
+
+@media (max-width: 900px) {
+    .container { width: 95%; }
+    h1 { font-size: 2rem; }
+}
+@media (max-width: 768px) {
+    .container { width: 100%; padding: 10px; }
+    h1 { font-size: 1.5rem; }
+}
+@media (max-width: 600px) {
+    .container { padding: 5px; }
+    h1 { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+    button { font-size: 0.9rem; padding: 8px 12px; }
+    li { font-size: 0.95rem; }
+}

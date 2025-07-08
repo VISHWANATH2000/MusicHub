@@ -107,13 +107,20 @@ audio::-webkit-media-controls-volume-slider {
 }
 
 /* Responsive Design */
-@media (max-width: 640px) {
-    table {
-        width: 100%;
-        font-size: 0.9rem;
-    }
-
-    .search-bar {
-        width: 100%;
-    }
+@media (max-width: 900px) {
+    .container { width: 95%; }
+    h1 { font-size: 2rem; }
+}
+@media (max-width: 768px) {
+    .container { padding: 10px; }
+    h1 { font-size: 1.5rem; }
+    th, td { padding: 8px 6px; }
+}
+@media (max-width: 600px) {
+    table { font-size: 0.85rem; }
+    .search-bar { width: 100%; }
+}
+@media (max-width: 480px) {
+    h1 { font-size: 1.1rem; }
+    .btn-pagination, .btn-delete { font-size: 0.9rem; padding: 6px 8px; }
 }
